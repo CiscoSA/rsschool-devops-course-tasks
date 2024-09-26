@@ -21,7 +21,8 @@ data "aws_iam_policy_document" "github_actions_role_policy" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:CiscoSA/rsschool-devops-course-tasks:*"]
+      # values   = ["repo:CiscoSA/rsschool-devops-course-tasks:*"]
+      values   = ["repo:${var.repo}"]
       # values   = ["repo:CiscoSA/rsschool-devops-course-tasks:ref:refs/heads/dev*"] # Uncomment it to make condition more strict
     }
   }

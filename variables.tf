@@ -16,3 +16,8 @@ variable "project" {
   type        = string
 }
 
+variable "repo" {
+  description = "Name of repo"
+  default     = "CiscoSA/rsschool-devops-course-tasks:*"
+  type        = string
+}
