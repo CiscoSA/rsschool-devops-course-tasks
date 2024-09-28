@@ -10,6 +10,8 @@ Ensure that the AWS CLI and Terraform installations are verified using `aws --ve
 
 ![alt text](https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_1/Screenshots/versions.png)
 
+![](Screenshots/versions.png)
+
 ## Evaluation Criteria (100 points for covering all criteria)
 
 1. **MFA User configured (10 points)**
