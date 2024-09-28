@@ -4,40 +4,24 @@
 
 The course aims to offer in-depth knowledge of DevOps principles and essential AWS services necessary for efficient automation and infrastructure management. Participants will gain practical skills in setting up, deploying, and managing Kubernetes clusters on AWS, using tools like Kops and Terraform.
 
-## Submission
-
-Ensure that the AWS CLI and Terraform installations are verified using `aws --version` and `terraform version`.
-
-![alt text](https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_1/Screenshots/versions.png)
-
-## Evaluation Criteria (100 points for covering all criteria)
-
-1. **MFA User configured (10 points)**
-
-   - Provide a screenshot of the non-root account secured by MFA (ensure sensitive information is not shared).
-
-2. **Bucket and GithubActionsRole IAM role configured (30 points)**
-
-   - Terraform code is created and includes:
-     - A bucket for Terraform states
-     - IAM role with correct Identity-based and Trust policies
-
-3. **Github Actions workflow is created (30 points)**
-
-   - Workflow includes all jobs
-
-4. **Code Organization (10 points)**
-
-   - Variables are defined in a separate variables file.
-   - Resources are separated into different files for better organization.
-
-5. **Verification (10 points)**
-
-   - Terraform plan is executed successfully for `GithubActionsRole`
-   - Terraform plan is executed successfully for a terraform state bucket
-
-6. **Additional Tasks (10 points)**
-   - **Documentation (5 points)**
-     - Document the infrastructure setup and usage in a README file.
-   - **Submission (5 points)**
-   - A GitHub Actions (GHA) pipeline is passing
+## File Structure
+- **```.github/workflows/```**:
+  The directory is where GitHub-specific files are stored, particularly workflows for GitHub Actions.
+- **```Screenshots/```**:  
+  The directory contains screenshots that are required in some of the tasks.
+- **```.gitignore```**:  
+  The file specifies which folders or files should be ignored when tracking changes with Git.
+- **```README.md```**:  
+  This file you're reading.
+- **```main.tf```**:  
+  The main configuration file where the core infrastructure is defined.
+- **```outputs.tf```**:  
+  This file contains the output definitions for the Terraform resources.
+- **```providers.tf```**:  
+  This file specifies the providers needed for Terraform configuration.
+- **```variables.tf```**:  
+  This file defines input variables for Terraform configuration. 
+- **```iam.tf```**:  
+  This file contains the IAM resource declarations.
+- **```s3.tf```**:  
+  This file contains the S3 resource declarations.
