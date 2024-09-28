@@ -29,11 +29,15 @@ Ensure that the AWS CLI and Terraform installations are verified using `aws --ve
 3. **Github Actions workflow is created (30 points)**
 
    - Workflow includes all jobs
+   https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_1/.github/workflows/deploy.yml
 
 4. **Code Organization (10 points)**
 
    - Variables are defined in a separate variables file.
+     - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_1/variables.tf
    - Resources are separated into different files for better organization.
+     - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_1/s3.tf
+     - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_1/iam.tf
 
 5. **Verification (10 points)**
 
