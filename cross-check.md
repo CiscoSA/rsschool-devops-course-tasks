@@ -43,7 +43,10 @@ Ensure that the AWS CLI and Terraform installations are verified using `aws --ve
 6. **Additional Tasks (10 points)**
    - **Documentation (5 points)**
      - Document the infrastructure setup and usage in a README file.
+<<<<<<< HEAD
      - https://github.com/CiscoSA/rsschool-devops-course-tasks/actionsREADME.md
+=======
+>>>>>>> 4941356df572f8203dbb333211b0dbfdefc3968d
    - **Submission (5 points)**
    - A GitHub Actions (GHA) pipeline is passing
      - https://github.com/CiscoSA/rsschool-devops-course-tasks/actions
