@@ -25,3 +25,20 @@ The course aims to offer in-depth knowledge of DevOps principles and essential A
   This file contains the IAM resource declarations.
 - **```s3.tf```**:  
   This file contains the S3 resource declarations.
+
+## How to Use
+
+1. **Clone the repository**
+Clone the repository and navigate to the project directory:
+```
+git clone git@github.com:CiscoSA/rsschool-devops-course-tasks.git
+cd rsschool-devops-course-tasks
+```
+2. **Initialize Terraform:**  
+   ```terraform init```
+
+3. **Plan and Apply Changes:**  
+
+   ```terraform plan```  
+
+   ```terraform apply```
