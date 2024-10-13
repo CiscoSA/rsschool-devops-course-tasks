@@ -7,7 +7,6 @@ resource "aws_route_table" "public_rtb" {
     destination_prefix_list_id = ""
     egress_only_gateway_id     = ""
     gateway_id                 = aws_internet_gateway.gw.id
-    # ipv6_cidr_block            = "::/0"
     ipv6_cidr_block            = null
     local_gateway_id           = ""
     nat_gateway_id             = ""
@@ -77,8 +76,9 @@ resource "aws_route_table" "private2_rtb" {
     gateway_id                 = ""
     ipv6_cidr_block            = null
     local_gateway_id           = ""
-    nat_gateway_id             = aws_nat_gateway.public2_gw.id
+    nat_gateway_id             = aws_nat_gateway.public1_gw.id
     network_interface_id       = ""
+    # network_interface_id       = aws_network_interface.nat_host.id
     transit_gateway_id         = ""
     vpc_endpoint_id            = ""
     vpc_peering_connection_id  = ""
@@ -86,9 +86,7 @@ resource "aws_route_table" "private2_rtb" {
   tags = {
     Name = "project-rtb-private2-us-east-1b"
   }
-  tags_all = {
-    Name = "project-rtb-private2-us-east-1b"
-  }
+
   vpc_id = aws_vpc.main_vpc.id
 }
 

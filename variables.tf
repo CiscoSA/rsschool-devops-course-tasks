@@ -19,22 +19,16 @@ variable "project" {
 variable "repo" {
   description = "Name of repo"
   default     = "CiscoSA/rsschool-devops-course-tasks:*"
-  # default     = "CiscoSA/rsschool-devops-course-tasks:ref:refs/heads/task_1*"
+  # default     = "CiscoSA/rsschool-devops-course-tasks:ref:refs/heads/task_2*"
   type = string
 }
 
 variable "instance_type" {
   description = "Instance type"
-  # default     = "t3.small"
-  default     = "t3.micro"
+  default     = "t2.micro"
   type        = string
 }
 
-# variable "ami" {
-#   description = "AMI"
-#   default     = "ami-005fc0f236362e99f"
-#   type        = string
-# }
 
 variable "public_subnets" {
   description = "List of CIDR blocks for public subnets"
@@ -46,8 +40,15 @@ variable "private_subnets" {
   default     = ["10.200.128.0/20", "10.200.144.0/20"]
 }
 
-# variable "public_ec2_count" {
-#   description = "public_ec2_count"
-#   default     = 2
-#   type = number
-# }
+data "aws_ami" "ubuntu" {
+  most_recent = true
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"]
+  }
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+  owners = ["099720109477"] # Canonical
+}
