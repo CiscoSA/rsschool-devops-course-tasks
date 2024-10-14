@@ -23,7 +23,7 @@ Clone the repository and navigate to the project directory:
 ```
 git clone git@github.com:CiscoSA/rsschool-devops-course-tasks.git
 cd rsschool-devops-course-tasks
-git branch task2
+git branch task_3
 ```
 2. **Initialize Terraform:**  
    ```terraform init```
