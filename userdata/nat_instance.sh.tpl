@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo -e "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDBF7da4uiGR3FZ0OZfQpnjoVGAOWoS9jMxLlfcScH/IH6d96dtHvHsDaQY7qCWCowlnV99mJScc6UTyF40PTblFMpYULVF2WiZE2LYje4DiVfzhtfVoiOD8juyG9VG2g0WwCapfIBmRiS78GxzS6PhdDnvCqRcU9fhxbm5mCvel4QWg2wi+kAsjoRB1wvheYWM94EgmAQ5M6JCM25tP8bWltlRwb+YFCUPdg/Mccp4B/QRqYY7/sDRyqVWRHzAhiTt3PHLkr/vAc3GrQhhL8HFnp9ql+U39dSwKT0OqwISKn28tWeiTJ9545x1n9/l32WS4/bj3rr+wQW5fEwAqboJdpyyedr0qzMaBdM75nL6s2CoY1M0OngyQzrJci0ty+9t5I1anJ/ktbrULdWgPsnuGQbsbWOg7JhY/Yk5GOuBGyb477eHevD3tlxY9xDdwhPluZ1jAGVQwe/exBFHVcJw7Ib4CtB7Au4OkLg4bk7RBS5mVxdB5SXEbCnk00NagsGlPt7TPRCtAKnL/dVr9ZllNvKBEzir26955qkSYK9f6Cr8ejuNwwMl2MllJAAkxxwwNKT+oadxbngfZqfB7xKcavsf8TEFQiHTHIJ/s7l6BebCqlh3PcR2xQkdKEaQ3l2wvjRSeKd+7xuDaBcz0yYD2Ew6bPJQuaOmwYe6F+lT6w== test@test.com" >> /home/ubuntu/.ssh/authorized_keys
+apt update
+# apt upgrade -y
+apt install nginx mc net-tools -y
+
+sysctl -w net.ipv4.ip_forward=1
+/sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+/sbin/iptables-save
