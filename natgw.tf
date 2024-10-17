@@ -13,16 +13,16 @@ resource "aws_nat_gateway" "public1_gw" {
 }
 
 
-resource "aws_nat_gateway" "public2_gw" {
-  allocation_id            = aws_eip.eip-ngw2.id
-  connectivity_type        = "public"
-  private_ip               = "10.200.21.11"
-  secondary_allocation_ids = []
-  subnet_id = aws_subnet.public_subnet[1].id
-  tags = {
-    Name = "project-nat-public2-us-east-1b"
-  }
-  tags_all = {
-    Name = "project-nat-public2-us-east-1b"
-  }
-}
+# resource "aws_nat_gateway" "public2_gw" {
+#   allocation_id            = aws_eip.eip-ngw2.id
+#   connectivity_type        = "public"
+#   private_ip               = "10.200.21.11"
+#   secondary_allocation_ids = []
+#   subnet_id = aws_subnet.public_subnet[1].id
+#   tags = {
+#     Name = "project-nat-public2-us-east-1b"
+#   }
+#   tags_all = {
+#     Name = "project-nat-public2-us-east-1b"
+#   }
+# }
