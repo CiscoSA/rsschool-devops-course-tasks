@@ -7,7 +7,7 @@ resource "aws_instance" "private1" {
   vpc_security_group_ids = [aws_security_group.public_sg.id]
 
 
-  user_data = templatefile("./userdata/control-plane.sh.tpl", {})
+  user_data = templatefile("./userdata/ec2.sh.tpl", {})
   tags = {
     Name = "control-plane"
   }
@@ -22,7 +22,7 @@ resource "aws_instance" "private2" {
 
   vpc_security_group_ids = [aws_security_group.public_sg.id]
 
-  user_data = templatefile("./userdata/worker.sh.tpl", {})
+  user_data = templatefile("./userdata/ec2.sh.tpl", {})
   tags = {
     Name = "worker"
   }

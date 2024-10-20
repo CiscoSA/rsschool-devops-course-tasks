@@ -13,7 +13,7 @@ resource "aws_instance" "bastion" {
   #   device_index         = 0
   # }
 
-  user_data = templatefile("./userdata/bastion.sh.tpl", {})
+  user_data = templatefile("./userdata/ec2.sh.tpl", {})
   tags = {
     Name = "Bastion"
   }
