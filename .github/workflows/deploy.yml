@@ -10,7 +10,7 @@ on:
       - main
   pull_request:
     branches:
-      - main
+      - task_3
 
 env:
   AWS_REGION : "us-east-1"
