@@ -7,7 +7,7 @@ permissions:
 on:
   push:
     branches:
-      - task_3
+      - main
   pull_request:
     branches:
       - main
