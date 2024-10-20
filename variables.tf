@@ -29,6 +29,13 @@ variable "instance_type" {
   type        = string
 }
 
+variable "instance_type_k8s" {
+  description = "k8s Instance type"
+  # default     = "t3.small"
+  default     = "t2.micro"
+  type        = string
+}
+
 
 variable "public_subnets" {
   description = "List of CIDR blocks for public subnets"

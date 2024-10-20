@@ -1,7 +1,7 @@
 resource "aws_security_group" "public_sg" {
   name        = "public_sg"
   description = "SG for public EC2"
-  vpc_id      = aws_vpc.main_vpc.id
+  vpc_id      = module.vpc.vpc_id
   tags = {
     Name = "public_sg"
   }
