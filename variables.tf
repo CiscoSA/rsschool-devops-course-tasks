@@ -32,8 +32,8 @@ variable "instance_type" {
 variable "instance_type_k8s" {
   description = "k8s Instance type"
   # default     = "t3.small"
-  default     = "t2.micro"
-  type        = string
+  default = "t2.micro"
+  type    = string
 }
 
 
