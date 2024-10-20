@@ -1,65 +1,34 @@
-# Task 2: Basic Infrastructure Configuration
+# Task3: K8s Cluster Configuration and Creation
+
+# Submission
+
+- Provide a PR with the Terraform code for the K8s cluster and bastion host.
+- Provide a screenshot of the `kubectl get nodes` command output.
+- Ensure that the simple workload is deployed and running successfully on the cluster.
+- Provide a PR with the monitoring setup.
+- Provide a README file documenting the cluster setup and deployment process.
 
 ## Evaluation Criteria (100 points for covering all criteria)
 
-1. **Terraform Code Implementation (50 points)**
+1. **Terraform Code for AWS Resources (10 points)**
 
-   - Terraform code is created to configure the following:
-     - VPC
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/vpc.tf
-     - 2 public subnets in different AZs
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/subnets.tf
-     - 2 private subnets in different AZs
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/subnets.tf
-     - Internet Gateway
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/igw.tf
-     - Routing configuration:
-       - Instances in all subnets can reach each other
-         - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/ec2.tf
-         - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/ec2-bastion.tf
-       - Instances in public subnets can reach addresses outside VPC and vice-versa
-       ![](Screenshots/ec2.png)
+   - Terraform code is created or extended to manage AWS resources required for the cluster creation.
+   - The code includes the creation of a bastion host.
 
-       ![](Screenshots/bastion.png)
+2. **Cluster Deployment (60 points)**
 
-       ![](Screenshots/ec2-private1.png)
+   - A K8s cluster is deployed using either kOps or k3s.
+   - The deployment method is chosen based on the user's preference and understanding of the trade-offs.
 
-       ![](Screenshots/ec2-private1.png)
+3. **Cluster Verification (10 points)**
 
-2. **Code Organization (10 points)**
+   - The cluster is verified by running the `kubectl get nodes` command from the local computer.
+   - A screenshot of the `kubectl get nodes` command output is provided.
 
-   - Variables are defined in a separate variables file.
-     - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/variables.tf
-   - Resources are separated into different files for better organization.
-     - https://github.com/CiscoSA/rsschool-devops-course-tasks/tree/task_2
+4. **Workload Deployment (10 points)**
 
+   - A simple workload is deployed on the cluster using `kubectl apply -f https://k8s.io/examples/pods/simple-pod.yaml`.
+   - The workload runs successfully on the cluster.
 
-3. **Verification (10 points)**
-
-   - Terraform plan is executed successfully.
-
-   ![](Screenshots/plan.png)
-
-   - A resource map screenshot is provided (VPC -> Your VPCs -> your_VPC_name -> Resource map).
-
-   ![](Screenshots/vpc.png)
-
-4. **Additional Tasks (30 points)**
-   - **Security Groups and Network ACLs (5 points)**
-     - Implement security groups and network ACLs for the VPC and subnets.
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/sg.tf
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/network_acl.tf
-   - **Bastion Host (5 points)**
-     - Create a bastion host for secure access to the private subnets.
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/ec2-bastion.tf
-   - **NAT is implemented for private subnets (10 points)**
-     - Orginize NAT for private subnets with simpler or cheaper way
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/natgw.tf
-     - Instances in private subnets should be able to reach addresses outside VPC
-   - **Documentation (5 points)**
-     - Document the infrastructure setup and usage in a README file.
-       - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/README.md
-   - **Submission (5 points)**
-   - A GitHub Actions (GHA) pipeline is set up for the Terraform code.
-     - https://github.com/CiscoSA/rsschool-devops-course-tasks/blob/task_2/.github/workflows/deploy.yml
-     
+5. **Additional Tasks (10 points)**
+   - Document the cluster setup and deployment process in a README file.
