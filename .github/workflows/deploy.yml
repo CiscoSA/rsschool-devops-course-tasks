@@ -7,10 +7,10 @@ permissions:
 on:
   push:
     branches:
-      - main
+      - task_3
   pull_request:
     branches:
-      - task_3
+      - main
 
 env:
   AWS_REGION : "us-east-1"
